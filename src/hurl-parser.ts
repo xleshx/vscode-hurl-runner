@@ -134,14 +134,15 @@ export function parseHurlOutput(
                                                 currentEntry.timings[key] = value;
                                         }
 				// Check if this is the total timing, which marks the end of timing section
-				if (key === "total") {
-					isTimings = false;
-					if (currentEntry.timings) {
-						currentEntry.timings = formatTimings(currentEntry.timings);
-					}
-				}
-			}
-		} else if (line.startsWith("* Captures:")) {
+                                if (key === "total") {
+                                        isTimings = false;
+                                        if (currentEntry.timings) {
+                                                currentEntry.timings = formatTimings(currentEntry.timings);
+                                        }
+                                }
+                        }
+                                }
+                        } else if (line.startsWith("* Captures:")) {
 			isCaptures = true;
 			isTimings = false;
 			if (currentEntry && !currentEntry.captures) {
